@@ -1932,7 +1932,13 @@ module.exports = function (bot) {
             }
         }
     };
-
+    bot.prettify2dArr = function(Arr2D){
+        Arr2D = Arr2D.map(function(item,index){
+        return item[0]+"|"+item[1]
+        })
+        Arr2D = Arr2D.join("\n-----\n")
+        return Arr2D
+    }
     commands.listcommands = (function () {
         function getSortedCommands() {
             // well, sort of sorted. we want to sort the commands, but have the
@@ -1956,7 +1962,7 @@ module.exports = function (bot) {
         }
 
         return function (args) {
-            return args.stringifyGiantArray(getSortedCommands());
+            return bot.prettify2dArr(getSortedCommands())
         };
     })();
 
