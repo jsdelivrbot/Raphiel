@@ -1932,9 +1932,19 @@ module.exports = function (bot) {
             }
         }
     };
+    bot.prettifyStr = function(oldStr,newLen){
+        var oldLen = oldStr.len
+        var newStr = oldStr
+        while(oldLen < newLen){
+            newStr+=" "
+        }
+        return newStr
+    }
     bot.prettify2dArr = function(Arr2D){
         Arr2D = Arr2D.map(function(item,index){
-        return item[0]+"|"+item[1]
+            var itemName = bot.prettifyStr(item[0],9)
+            var itemDescription = bot.prettifyStr(item[1], 20)
+            return itemName+"|"+itemDescription
         })
         Arr2D = Arr2D.join("\n-----\n")
         return Arr2D
