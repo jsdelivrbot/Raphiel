@@ -1949,7 +1949,9 @@ module.exports = function (bot) {
 
             var helpIndex = sortedCommands.indexOf('help');
             sortedCommands.unshift(sortedCommands.splice(helpIndex, 1)[0]);
-
+            sortedCommands=sortedCommands.map(function(item){
+                return [item,bot.commands[item].permissions]
+            })
             return sortedCommands;
         }
 
