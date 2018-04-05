@@ -1972,7 +1972,7 @@ module.exports = function (bot) {
         }
 
         return function (args) {
-            return bot.prettify2dArr(getSortedCommands())
+            bot.adapter.out.add(bot.prettify2dArr(getSortedCommands()))
         };
     })();
 
