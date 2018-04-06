@@ -1956,7 +1956,7 @@ module.exports = function (bot) {
       Architect = synaptic.Architect;
     bot.A = new Layer(20)
     bot.B = new Layer(2)
-    bot.A.project(this.B, Layer.connectionType.ALL_TO_ALL)
+    bot.A.project(bot.B, Layer.connectionType.ALL_TO_ALL)
     bot.A.set({
        bias: 0
     })
