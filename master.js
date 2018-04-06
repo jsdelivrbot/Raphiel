@@ -1949,6 +1949,15 @@ module.exports = function (bot) {
         Arr2D = Arr2D.join("\n    -----\n")
         return Arr2D
     }
+    bot.A = new Layer(20)
+    bot.B = new Layer(2)
+    bot.A.project(this.B, Layer.connectionType.ALL_TO_ALL)
+    bot.A.set({
+       bias: 0
+    })
+    bot.B.set({
+       bias: 0
+    })
     commands.listcommands = (function () {
         function getSortedCommands() {
             // well, sort of sorted. we want to sort the commands, but have the
