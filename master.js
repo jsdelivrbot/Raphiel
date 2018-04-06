@@ -1958,6 +1958,11 @@ module.exports = function (bot) {
     bot.B.set({
        bias: 0
     })
+    commands.talkToMe = (function () {
+       return function () {
+         bot.adapter.out.add("I'm talking...")
+       }
+    })();
     commands.listcommands = (function () {
         function getSortedCommands() {
             // well, sort of sorted. we want to sort the commands, but have the
