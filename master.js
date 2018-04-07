@@ -13,7 +13,7 @@ exports.Command = function (cmd) {
     cmd.permissions.del = cmd.permissions.del || 'NONE';
 
     cmd.description = cmd.description || '';
-    cmd.creator = cmd.creator || 'God';
+    cmd.creator = cmd.creator || 'Pheo';
 
     // make canUse and canDel
     ['Use', 'Del'].forEach(function (perm) {
@@ -1482,7 +1482,6 @@ var bot = window.bot = {
         return { error: msg, guesses: guesses };
     },
 
-    // the function women think is lacking in men
     listen: function (regex, fun, thisArg) {
         if (Array.isArray(regex)) {
             regex.forEach(function (reg) {
@@ -2043,8 +2042,7 @@ module.exports = function (bot) {
         var msgObj = Object.merge(args.get(), extended),
             cmdArgs = bot.Message(parts.slice(2).join(' '), msgObj);
 
-        // this is an ugly, but functional thing, much like your high-school
-        // prom date to make sure a command's output goes through us, we simply
+        // this is an ugly, but functional thing to make sure a command's output goes through us, we simply
         // override the standard ways to do output
         var reply = cmdArgs.reply.bind(cmdArgs),
             directreply = cmdArgs.directreply.bind(cmdArgs);
