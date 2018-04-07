@@ -176,8 +176,7 @@ var IO = window.IO = module.exports = {
     },
 
     urlstringify: (function () {
-        // simple types, for which toString does the job
-        // used in singularStringify
+        // simple types, for which toString does the job; used in singularStringify
         var simplies = { number: true, string: true, boolean: true };
 
         var singularStringify = function (thing) {
@@ -194,9 +193,10 @@ var IO = window.IO = module.exports = {
                 return pair(key, val, true);
             }).join('&');
         };
-
-        // returns a key=value pair. pass in dontStringifyKey so that, well, the
-        // key won't be stringified (used in arrayStringify)
+        /*
+         returns a key=value pair. pass in dontStringifyKey so that, well, the
+         key won't be stringified (used in arrayStringify)
+        */
         var pair = function (key, val, dontStringifyKey) {
             if (!dontStringifyKey) {
                 key = singularStringify(key);
@@ -228,10 +228,11 @@ var IO = window.IO = module.exports = {
         document.head.appendChild(script);
     }
 };
-
-// turns some html tags into markdown. a major assumption is that the input is
-// properly sanitised - that is, all <, &, etc entered by the user got turned
-// into html entities.
+/*
+ turns some html tags into markdown. a major assumption is that the input is
+ properly sanitised - that is, all <, &, etc entered by the user got turned
+ into html entities.
+*/
 IO.htmlToMarkdown = (function () {
 
     // A string value is the delimiter (what replaces the tag)
@@ -815,13 +816,13 @@ var adapter = {
 
         return site;
     },
-
-    // a pretty crucial function. accepts the msgObj we know nothing about,
-    // and returns an object with these properties:
-    //   user_name, user_id, room_id, content
-    // and any other properties, as the abstraction sees fit
-    // since the bot was designed around the SO chat message object, in this
-    // case, we simply do nothing
+    /*
+     and returns an object with these properties:
+       user_name, user_id, room_id, content
+     and any other properties, as the abstraction sees fit
+     since the bot was designed around the SO chat message object, in this
+     case, we simply do nothing
+    */
     transform: function (msgObj) {
         return msgObj;
     },
@@ -842,11 +843,13 @@ var adapter = {
     directreply: function (msgid) {
         return ':' + msgid;
     },
-
-    // receives text and turns it into a codified version
-    // codified is ambiguous for a simple reason: it means nicely-aligned and
-    // mono-spaced. in SO chat, it handles it for us nicely; in others, more
-    // clever methods may need to be taken
+    
+    /*
+     receives text and turns it into a codified version
+     codified is ambiguous for a simple reason: it means nicely-aligned and
+     mono-spaced. in SO chat, it handles it for us nicely; in others, more
+     clever methods may need to be taken
+    */
     codify: function (msg) {
         var tab = '    ',
             spacified = msg.replace('\t', tab),
@@ -886,9 +889,11 @@ var adapter = {
 // the input is not used by the bot directly, so you can implement it however
 // you like
 var input = {
-    // used in the SO chat requests, dunno exactly what for, but guessing it's
-    // the latest id or something like that. could also be the time last
-    // sent, which is why I called it times at the beginning. or something.
+    /*
+      used in the SO chat requests, dunno exactly what for, but guessing it's
+     the latest id or something like that. could also be the time last
+     sent, which is why I called it times at the beginning. or something.
+    */
     times: {},
 
     firstPoll: true,
@@ -945,10 +950,12 @@ var input = {
     },
 
     openSocket: function (url, discard) {
-        // chat sends an l query string parameter. seems to be the same as the
-        // since xhr parameter, but I didn't know what that was either so...
-        // putting in 0 got the last shitload of messages, so what does a high
-        // number do? (spoiler: it "works")
+        /*
+         chat sends an l query string parameter. seems to be the same as the
+         since xhr parameter, but I didn't know what that was either so...
+         putting in 0 got the last shitload of messages, so what does a high
+         number do? (spoiler: it "works")
+        */
         var socket = new WebSocket(url + '?l=99999999999');
 
         if (discard) {
@@ -1158,15 +1165,18 @@ var output = {
         });
         IO.out.flush();
     },
-
-    // send output to all the good boys and girls
-    // no messages for naughty kids
-    // ...what's red and sits in the corner?
-    // a naughty strawberry
+    /*
+     send output to all the good boys and girls
+     no messages for naughty kids
+     ...what's red and sits in the corner?
+     a naughty strawberry
+    */
     send: function (obj) {
-        // unless the bot's stopped. in which case, it should shut the fudge up
-        // the freezer and never let it out. not until it can talk again. what
-        // was I intending to say?
+        /*
+         unless the bot's stopped. in which case, it should shut the fudge up
+         the freezer and never let it out. not until it can talk again. what
+         was I intending to say?
+        */
         if (this.stopped) {
             // ah fuck it
             return;
@@ -1178,8 +1188,7 @@ var output = {
         }, this.flushWait);
     },
 
-    // what's brown and sticky?
-    // a stick
+    
     sendToRoom: function (text, roomid) {
         IO.xhr({
             url: '/chats/' + roomid + '/messages/new',
@@ -1218,8 +1227,7 @@ var output = {
             }
         }
 
-        // what's orange and sounds like a parrot?
-        // a carrot
+        
         function delayAdd () {
             setTimeout(function delayedAdd () {
                 output.add(text, roomid);
@@ -1344,9 +1352,11 @@ var bot = window.bot = {
         }
     },
 
-    // this conditionally calls execCommand or callListeners, depending on what
-    // the input. if the input begins with a command name, it's assumed to be a
-    // command. otherwise, it tries matching against the listener.
+    /*
+     this conditionally calls execCommand or callListeners, depending on what
+     the input. if the input begins with a command name, it's assumed to be a
+     command. otherwise, it tries matching against the listener.
+    */
     invokeAction: function (msg) {
         var possibleName = msg.trim().replace(/^\/\s*/, '').split(' ')[0],
             cmd = this.getCommand(possibleName),
