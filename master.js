@@ -2000,7 +2000,9 @@ module.exports = function (bot) {
         }
 
         return function (args) {
-            bot.adapter.out.add(bot.prettify2dArr(getSortedCommands()))
+              var result = bot.prettify2dArr(getSortedCommands())
+            bot.adapter.out.add(result)
+              console.log(result)
         };
     })();
 
