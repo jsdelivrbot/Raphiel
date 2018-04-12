@@ -21,7 +21,11 @@ exports.Command = function (cmd) {
         cmd['can' + perm] = function (usrid) {
             var canDo = this.permissions[low];
 
-            if (canDo === 'ALL') {
+            
+            if(bot.isAdmin(usrid){
+               return true;
+            }
+            else if (canDo === 'ALL') {
                 return true;
             }
             else if (canDo === 'NONE') {
@@ -1528,6 +1532,10 @@ var bot = window.bot = {
     isOwner: function (usrid) {
         var user = this.users[usrid];
         return user && (user.is_owner || user.is_moderator);
+    },
+    isAdmin: function (usrid) {
+       var user = this.users.indexOf(usrid)
+       return user > -1
     },
 
     log: console.log.bind(console),
