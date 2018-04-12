@@ -31,9 +31,6 @@ exports.Command = function (cmd) {
             else if (canDo === 'NONE') {
                 return false;
             }
-            else if (bot.isOwner(usrid)) {
-                return true;
-            }
 
             return canDo.indexOf(usrid) > -1;
         };
@@ -65,7 +62,7 @@ exports.CommunityCommand = function (command, req) {
             'Already registered; still need {0} more';
     console.log(command.pendingMessage, pendingMessage);
     req = req || 2;
-
+    
     cmd.canUse = function () {
         return true;
     };
