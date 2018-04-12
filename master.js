@@ -4,7 +4,6 @@
 // some sort of pseudo constructor
 exports.Command = function (cmd) {
     var bot = this;
-
     cmd.name = cmd.name.toLowerCase();
     cmd.thisArg = cmd.thisArg || cmd;
 
@@ -2100,13 +2099,13 @@ module.exports = function (bot) {
     };
 
     // only allow owners to use certain commands
-    var privilegedCommands = {
+    var adminCommands = {
         die: true, live: true,
         ban: true, unban: true,
         refresh: true
     };
     // voting-based commands for unpriviledged users
-    var communal = {
+    var ownerCommands = {
         die: true, ban: true
     };
     // commands which can't be used with /tell
@@ -2120,7 +2119,7 @@ module.exports = function (bot) {
             fun: fun,
             permissions: {
                 del: 'NONE',
-                use: privilegedCommands[cmdName] ? 'OWNER' : 'ALL'
+                use: adminCommands[cmdName] ? 'OWNER' : 'ALL'
             },
             description: descriptions[cmdName],
             pendingMessage: fun.pendingMessage,
@@ -2128,7 +2127,7 @@ module.exports = function (bot) {
             async: fun.async
         };
 
-        if (communal[cmdName]) {
+        if (ownerCommands[cmdName]) {
             cmd = bot.CommunityCommand(cmd, fun.invokeReq);
         }
         bot.addCommand(cmd);
