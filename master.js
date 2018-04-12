@@ -1957,14 +1957,6 @@ module.exports = function (bot) {
         Arr2D = Arr2D.join("\n    -----\n")
         return Arr2D
     }
-    var Neuron = synaptic.Neuron,
-      Layer = synaptic.Layer,
-      Network = synaptic.Network,
-      Trainer = synaptic.Trainer,
-      Architect = synaptic.Architect;
-    bot.A = new Layer(20)
-    bot.B = new Layer(2)
-    bot.A.project(bot.B, Layer.connectionType.ALL_TO_ALL)
     bot.A.set({
        bias: 0
     })
@@ -2264,7 +2256,7 @@ exports.prettyEval = function (code, arg, cb) {
         if (answer === undefined) {
             return 'Malformed output from web-worker. If you weren\'t just ' +
                 'fooling around trying to break me, raise an issue or ' +
-                'contact Zirak';
+                'contact Pheo';
         }
 
         result = snipAndCodify(answer);
@@ -2395,7 +2387,7 @@ module.exports = {
     saveInterval: 900000,
 
     data: {},
-
+   
     get: function (name, defaultVal) {
         if (!this.data[name]) {
             this.set(name, defaultVal || {});
@@ -2403,7 +2395,6 @@ module.exports = {
 
         return this.data[name];
     },
-
     set: function (name, val) {
         this.data[name] = val;
     },
@@ -2418,7 +2409,7 @@ module.exports = {
             }
         });
     },
-
+    
     save: function (name) {
         if (name) {
             localStorage['bot_' + name] = JSON.stringify(this.data[name]);
