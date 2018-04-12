@@ -1534,7 +1534,7 @@ var bot = window.bot = {
         return user && (user.is_owner || user.is_moderator);
     },
     isAdmin: function (usrid) {
-       var user = this.users.indexOf(usrid)
+       var user = this.memory.data.Admins.indexOf(usrid)
        return user > -1
     },
 
