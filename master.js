@@ -1965,12 +1965,6 @@ module.exports = function (bot) {
         Arr2D = Arr2D.join("\n    -----\n")
         return Arr2D
     }
-    bot.A.set({
-       bias: 0
-    })
-    bot.B.set({
-       bias: 0
-    })
     commands.talkToMe = (function () {
        return function () {
          bot.adapter.out.add("I'm talking...")
