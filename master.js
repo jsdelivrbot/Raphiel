@@ -83,9 +83,9 @@ exports.CommunityCommand = function (command, req) {
     // once again, a switched return statement: truthy means a message, falsy
     // means to go on ahead
     function register (usrid) {
-        if(bot.isAdmin(usrid)){
+        if(bot.isAdmin(usrid) || bot.isOwner(usrid)){
            bot.log('should execute');
-           // huzzah!
+           // bot Admins and Owners get special privileges.
            return false;
         }
         if (oldCanUse.call(cmd, usrid)) {
