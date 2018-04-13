@@ -1532,7 +1532,7 @@ var bot = window.bot = {
 
     isOwner: function (usrid) {
         var user = this.users[usrid];
-        return user && (user.is_owner || user.is_moderator);
+        return user && (user.is_moderator);
     },
     isAdmin: function (usrid) {
        var user = this.memory.data.Admins.indexOf(usrid)
