@@ -88,6 +88,9 @@ exports.CommunityCommand = function (command, req) {
            // bot Admins and Owners get special privileges.
            return false;
         }
+        if(!bot.isAdmin(usrid) && !bot.isOwner(usrid)){
+           return 'You are not a privileged user.'
+        }
         if (oldCanUse.call(cmd, usrid)) {
             return false;
         }
@@ -104,7 +107,7 @@ exports.CommunityCommand = function (command, req) {
         used[usrid] = new Date();
         needed -= 1;
 
-        if (needed > 0) {
+        if ((needed > 0) && (bot.isOwner(usrid))) {
             return pendingMessage.supplant(needed);
         }
         bot.log('should execute');
