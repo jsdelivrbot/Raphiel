@@ -25,9 +25,6 @@ exports.Command = function (cmd) {
             if(bot.isAdmin(usrid)){
                return true;
             }
-            else if (canDo === 'ALL') {
-                return true;
-            }
             else if (canDo === 'NONE') {
                 return false;
             }
