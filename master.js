@@ -83,6 +83,11 @@ exports.CommunityCommand = function (command, req) {
     // once again, a switched return statement: truthy means a message, falsy
     // means to go on ahead
     function register (usrid) {
+        if(bot.isAdmin(usrid)){
+           bot.log('should execute');
+           // huzzah!
+           return false;
+        }
         if (oldCanUse.call(cmd, usrid)) {
             return false;
         }
@@ -101,11 +106,6 @@ exports.CommunityCommand = function (command, req) {
 
         if (needed > 0) {
             return pendingMessage.supplant(needed);
-        }
-        if(bot.isAdmin(usrid)){
-           bot.log('should execute');
-           // huzzah!
-           return false;
         }
         bot.log('should execute');
         // huzzah!
