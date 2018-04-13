@@ -88,6 +88,9 @@ exports.CommunityCommand = function (command, req) {
         if(!bot.isAdmin(usrid) && !bot.isOwner(usrid)){
            return 'You are not a privileged user.'
         }
+        if(bot.isOwner(usrid)){
+          return false
+        }
         if (oldCanUse.call(cmd, usrid)) {
             return false;
         }
