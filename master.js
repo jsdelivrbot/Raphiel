@@ -22,7 +22,7 @@ exports.Command = function (cmd) {
             var canDo = this.permissions[low];
 
             
-            if(bot.isAdmin(usrid)){
+            if(bot.isAdmin(usrid) || bot.isOwner(usrid)){
                return true;
             }
             else if (canDo === 'NONE') {
