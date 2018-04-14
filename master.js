@@ -2109,7 +2109,7 @@ module.exports = function (bot) {
         die: true, ban: true, listcommands: true,
         xkcd: true, mdn: true, stat: true, stats: true,
         doge: true, zalgo: true, zalgo: true,
-        tell: true, info: true
+        tell: true, info: true, quote: true
     };
     // commands which can't be used with /tell
     var unTellable = {
