@@ -2106,7 +2106,10 @@ module.exports = function (bot) {
     };
     // voting-based commands for unpriviledged users
     var ownerCommands = {
-        die: true, ban: true, listcommands: true, xkcd: true, mdn: true
+        die: true, ban: true, listcommands: true,
+        xkcd: true, mdn: true, stat: true, stats: true,
+        doge: true, zalgo: true, zalgo: true,
+        tell: true, info: true
     };
     // commands which can't be used with /tell
     var unTellable = {
