@@ -22,7 +22,7 @@ exports.Command = function (cmd) {
             var canDo = this.permissions[low];
 
             
-            if(bot.isAdmin(usrid) || bot.isOwner(usrid)){
+            if(bot.isAdmin(usrid)){
                return true;
             }
             else if (canDo === 'NONE') {
@@ -2106,7 +2106,7 @@ module.exports = function (bot) {
     };
     // voting-based commands for unpriviledged users
     var ownerCommands = {
-        die: true, ban: true
+        die: true, ban: true, listcommands: true, xkcd: true, mdn: true
     };
     // commands which can't be used with /tell
     var unTellable = {
