@@ -5321,29 +5321,6 @@ module.exports = function (bot) {
             reply, msgObj.room_id);
     });
 
-    bot.addCommand({
-        name: 'meme',
-        fun: function (args) {
-            var name = args.replace(/\.\w+$/, '');
-
-            if (!name || name === 'list') {
-                return Object.keys(memes).join(', ');
-            }
-            else if (!memes.hasOwnProperty(name)) {
-                return 'Sorry, I don\'t know that one.';
-            }
-
-            args.directreply(getMemeLink(name));
-        },
-        permissions: { del: 'NONE' },
-        description: 'Return a simple meme link. Pass no arguments or `list` ' +
-            'to get a list of known memes. `/meme [memeName]`.'
-    });
-
-    function getMemeLink (meme) {
-        return urlBase + memes[meme] + '.' + extension;
-    }
-
 };
 
 },{}],33:[function(require,module,exports){
