@@ -5500,12 +5500,6 @@ module.exports = function (bot) {
             '`/mustache [link|usrid|username] [mustache=rand(0,5)]`'
     };
 
-    bot.addCommand(cmd);
-
-    // #176, alias moustache to mustache
-    var moustache = Object.merge(cmd, { name: 'moustache' });
-    bot.addCommand(moustache);
-
 };
 
 },{}],35:[function(require,module,exports){
