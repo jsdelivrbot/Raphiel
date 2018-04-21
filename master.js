@@ -5608,7 +5608,7 @@ module.exports = function (bot) {
             'Get a quote: `/quote get ...quoteName',
             'List quotes: `/quote list [username]`',
             'Get a random quote: `/quote random`'
-        ].join('    \n'),
+        ].join('\n    '),
         async: true
     });
 
