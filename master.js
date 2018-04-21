@@ -2000,6 +2000,7 @@ module.exports = function (bot) {
 
         return function (args) {
               var result = bot.prettify2dArr(getSortedCommands())
+              window.re = result
             bot.adapter.out.add(result)
               console.log(result)
         };
@@ -2109,7 +2110,8 @@ module.exports = function (bot) {
         die: true, ban: true, listcommands: true,
         xkcd: true, mdn: true, stat: true, stats: true,
         doge: true, zalgo: true, zalgo: true,
-        tell: true, info: true, quote: true
+        tell: true, info: true, quote: true,
+        
     };
     // commands which can't be used with /tell
     var unTellable = {
