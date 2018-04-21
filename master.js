@@ -2867,8 +2867,7 @@ module.exports = function (bot) {
             del: 'NONE'
         },
 
-        description: 'Set an afk message: `/afk <message>`. Invoke `/afk` ' +
-            'again to return.',
+        description: 'Set an afk message: `/afk <message>`. Invoke `/afk` again to return.',
         unTellable: true
     });
 
@@ -3009,8 +3008,7 @@ module.exports = function (bot) {
         },
 
         permissions: { del: 'NONE', use: 'OWNER' },
-        description: 'Bans a user from using me. Lacking arguments, prints ' +
-            'the  ban list. `/ban [usr_id|usr_name]`',
+        description: 'Bans a user from using me. Lacking arguments, prints the  ban list. `/ban [usr_id|usr_name]`',
         pendingMessage: 'The user will be thrown into mindjail in {0} more ' +
             'invocations'
     };
@@ -3130,9 +3128,7 @@ module.exports = function (bot) {
         permissions: {
             del: 'NONE'
         },
-        description: 'Converts several units and currencies, case sensitive. '+
-            '`/convert <num><unit> [to|in <unit>]` ' +
-            'Pass in list for supported units `/convert list`'
+        description: 'Converts several units and currencies, case sensitive. `/convert <num><unit> [to|in <unit>]` Pass in list for supported units `/convert list`'
     });
 };
 
@@ -4512,8 +4508,7 @@ module.exports = function (bot) {
             del: 'NONE'
         },
 
-        description: 'so shibe, much doge, wow' +
-            ' `/doge one,two,three[,nth]',
+        description: 'so shibe, much doge, wow `/doge one,two,three[,nth]',
         unTellable: true
     });
 
@@ -5177,8 +5172,7 @@ module.exports = function (bot) {
             del: 'NONE'
         },
 
-        description: 'Teaches me a command. ' +
-            '`/learn cmdName outputPattern [inputRegex [description]]`'
+        description: 'Teaches me a command. /learn cmdName outputPattern [inputRegex [description]]`'
     });
 
     loadCommands();
@@ -5472,8 +5466,7 @@ module.exports = function (bot) {
             del: 'NONE'
         },
 
-        description: 'Mustachifies a user. ' +
-            '`/mustache [link|usrid|username] [mustache=rand(0,5)]`'
+        description: 'Mustachifies a user. `/mustache [link|usrid|username] [mustache=rand(0,5)]`'
     };
 
 };
@@ -5574,10 +5567,7 @@ module.exports = function (bot) {
             del: 'NONE'
         },
 
-        description: 'Register a nudge after an interval. ' +
-            '`/nudge intervalInMinutes message`, `/nudge remove id` to ' +
-            'remove, or the listener, ' +
-            '`nudge|remind|poke me? in? intervalInMinutes message`',
+        description: 'Register a nudge after an interval. `/nudge intervalInMinutes message`, `/nudge remove id` to remove, or the listener, `nudge|remind|poke me? in? intervalInMinutes message`',
         unTellable: true
     });
 
@@ -5618,7 +5608,7 @@ module.exports = function (bot) {
             'Get a quote: `/quote get ...quoteName',
             'List quotes: `/quote list [username]`',
             'Get a random quote: `/quote random`'
-        ].join('\n'),
+        ].join('    \n'),
         async: true
     });
 
@@ -5928,8 +5918,7 @@ module.exports = function (bot) {
             del: 'NONE'
         },
 
-        description: 'Gives useless stats on a user. ' +
-            '`/stat usrid|usrname [extended]`',
+        description: 'Gives useless stats on a user. `/stat usrid|usrname [extended]`',
         async: true
     };
 
@@ -6162,8 +6151,7 @@ module.exports = function (bot) {
             del: 'NONE',
             use: 'OWNER'
         },
-        description: 'Say boopidi bee and in the room I shall be. '+
-            '`/summon roomid`',
+        description: 'Say boopidi bee and in the room I shall be. `/summon roomid`',
         pendingMessage: 'I will appear in that room after {0} more invocation(s)'
     }));
 
@@ -6174,8 +6162,7 @@ module.exports = function (bot) {
             del: 'NONE',
             use: 'OWNER'
         },
-        description: 'Chant zippidi lepat and from the room I shall depart. ' +
-            '`/unsummon [roomid=your_roomid]`',
+        description: 'Chant zippidi lepat and from the room I shall depart. `/unsummon [roomid=your_roomid]`',
         pendingMessage: 'I will leave this room after {0} more invocation(s)'
     }));
 
@@ -6326,10 +6313,7 @@ module.exports = function (bot) {
             del: 'NONE',
             use: 'OWNER'
         },
-        description: 'Undo (delete) specified or last message. ' +
-            '`/undo [msgid0, msgid1, ...]` (omit for last message); ' +
-            '`/undo xN` for last N; ' +
-            '`/undo ~N` for the Nth message from the end'
+        description: 'Undo (delete) specified or last message. `/undo [msgid0, msgid1, ...]` (omit for last message); `/undo xN` for last N; `/undo ~N` for the Nth message from the end'
     });
 
 };
@@ -6563,8 +6547,7 @@ module.exports = function (bot) {
         permissions: {
             del: 'NONE'
         },
-        description: 'Get/toggle the unonebox listener. ' +
-        '`/unonebox [on|off]x`'
+        description: 'Get/toggle the unonebox listener. `/unonebox [on|off]x`'
     });
 
 };
@@ -6665,8 +6648,7 @@ module.exports = function (bot) {
 
         permissions: { del: 'NONE', use: 'ALL' },
 
-        description: 'Fetches UrbanDictionary definition. ' +
-            '`/urban query [resultIndex=0]`',
+        description: 'Fetches UrbanDictionary definition. `/urban query [resultIndex=0]`',
         async: true
     });
 
@@ -6947,8 +6929,7 @@ module.exports = function (bot) {
         },
         async: true,
 
-        description: 'Gets current weather: ' +
-            '`/weather (lan, lon)` or `/weather city`'
+        description: 'Gets current weather: `/weather (lan, lon)` or `/weather city`'
     });
 };
 
@@ -7190,8 +7171,7 @@ module.exports = function (bot) {
         permissions: {
             del: 'NONE'
         },
-        description: 'Returns an XKCD. Call with no args for random, ' +
-            '`new` for latest, or a number for a specific one.',
+        description: 'Returns an XKCD. Call with no args for random, `new` for latest, or a number for a specific one.',
         async: true
     });
 
