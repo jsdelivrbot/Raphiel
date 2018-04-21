@@ -1958,6 +1958,7 @@ module.exports = function (bot) {
         var oldLen = oldStr.length
         var newStr = oldStr
         while(oldLen < newLen){
+            oldLen++
             newStr+=" "
         }
         return newStr
