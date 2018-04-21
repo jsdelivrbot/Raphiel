@@ -1955,7 +1955,7 @@ module.exports = function (bot) {
         }
     };
     bot.prettifyStr = function(oldStr,newLen){
-        var oldLen = oldStr.len
+        var oldLen = oldStr.length
         var newStr = oldStr
         while(oldLen < newLen){
             newStr+=" "
