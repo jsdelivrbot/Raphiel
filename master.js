@@ -3010,7 +3010,7 @@ module.exports = function (bot) {
         },
 
         permissions: { del: 'NONE', use: 'OWNER' },
-        description: 'Bans a user from using me. Lacking arguments, prints the  ban list. `/ban [usr_id|usr_name]`',
+        description: 'Bans a user from using me. Lacking arguments, prints the  ban list.',
         pendingMessage: 'The user will be thrown into mindjail in {0} more ' +
             'invocations'
     };
@@ -3130,7 +3130,7 @@ module.exports = function (bot) {
         permissions: {
             del: 'NONE'
         },
-        description: 'Converts several units and currencies, case sensitive. `/convert <num><unit> [to|in <unit>]` Pass in list for supported units `/convert list`'
+        description: 'Converts several units and currencies, case sensitive.'
     });
 };
 
