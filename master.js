@@ -2090,12 +2090,12 @@ module.exports = function (bot) {
     var descriptions = {
         eval: 'Forwards message to javascript code-eval',
         forget: 'Forgets a given command. `/forget cmdName`',
-        help: 'Fetches documentation for given command, or general help article. `/help [cmdName]`',
+        help: 'Fetches documentation for given command, or general help article. /help [cmdName]',
         info: 'Grabs some stats on my current instance or a command. `/info [cmdName]`',
         listcommands: 'Lists commands. `/listcommands`',
         listen: 'Forwards the message to my ears (as if called without the /)',
         refresh: 'Reloads the browser window I live in',
-        tell: 'Redirect command result to user/message. /tell `msg_id|user_name cmdName [cmdArgs]`'
+        tell: 'Redirect command result to user/message. /tell msg_id|user_name cmdName [cmdArgs]'
     };
 
     // only allow owners to use certain commands
