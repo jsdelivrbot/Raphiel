@@ -1967,9 +1967,9 @@ module.exports = function (bot) {
         Arr2D = Arr2D.map(function(item,index){
             var itemName = bot.prettifyStr(item[0],12)
             var itemDescription = bot.prettifyStr(item[1], 20)
-            return "    "+itemName+"|"+itemDescription
+            return "    ┃"+itemName+"┃"+itemDescription+"┃"
         })
-        Arr2D = Arr2D.join("\n    -----\n")
+        Arr2D = Arr2D.join("\n    ┣━━━━━━━━━━━╋━━━━━━━━━━━━━━━\n")
         return Arr2D
     }
     commands.talkToMe = (function () {
