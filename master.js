@@ -5569,7 +5569,7 @@ module.exports = function (bot) {
             del: 'NONE'
         },
 
-        description: 'Register a nudge after an interval. `/nudge intervalInMinutes message`, `/nudge remove id` to remove, or the listener, `nudge|remind|poke me? in? intervalInMinutes message`',
+        description: 'Register a nudge after an interval. `/nudge intervalInMinutes message`',
         unTellable: true
     });
 
@@ -5610,7 +5610,7 @@ module.exports = function (bot) {
             'Get a quote: `/quote get ...quoteName',
             'List quotes: `/quote list [username]`',
             'Get a random quote: `/quote random`'
-        ].join('\n    '),
+        ].join('\n    │            │'),
         async: true
     });
 
