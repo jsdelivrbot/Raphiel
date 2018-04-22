@@ -1969,7 +1969,7 @@ module.exports = function (bot) {
             var itemDescription = bot.prettifyStr(item[1], 80)
             return "    │"+itemName+"│"+itemDescription+"│"
         })
-        Arr2D = Arr2D.join("\n    ├────────────┼──────────────────\n")
+        Arr2D = Arr2D.join("\n    ├────────────┼────────────────────────────────────────────────────────────────────────────────┤\n")
         var result = "    ┌────────────┬──────────────────\n" + Arr2D
         return result
     }
