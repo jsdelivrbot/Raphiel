@@ -1966,7 +1966,7 @@ module.exports = function (bot) {
     bot.prettify2dArr = function(Arr2D){
         Arr2D = Arr2D.map(function(item,index){
             var itemName = bot.prettifyStr(item[0],12)
-            var itemDescription = bot.prettifyStr(item[1], 20)
+            var itemDescription = bot.prettifyStr(item[1], 80)
             return "    │"+itemName+"│"+itemDescription+"│"
         })
         Arr2D = Arr2D.join("\n    ├────────────┼──────────────────\n")
