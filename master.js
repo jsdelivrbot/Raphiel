@@ -1970,7 +1970,7 @@ module.exports = function (bot) {
             return "    │"+itemName+"│"+itemDescription+"│"
         })
         Arr2D = Arr2D.join("\n    ├────────────┼────────────────────────────────────────────────────────────────────────────────┤\n")
-        var result = "    ┌────────────┬──────────────────\n" + Arr2D
+        var result = "    ┌────────────┬────────────────────────────────────────────────────────────────────────────────┐\n" + Arr2D
         return result
     }
     commands.talkToMe = (function () {
