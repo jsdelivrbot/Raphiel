@@ -5610,7 +5610,7 @@ module.exports = function (bot) {
             'Get a quote: `/quote get ...quoteName',
             'List quotes: `/quote list [username]`',
             'Get a random quote: `/quote random`'
-        ].join('\n    │            │'),
+        ].map(function(item){return bot.prettifyStr(item,80)}).join('│\n    │            │'),
         async: true
     });
 
