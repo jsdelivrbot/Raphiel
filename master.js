@@ -7173,7 +7173,7 @@ module.exports = function (bot) {
         permissions: {
             del: 'NONE'
         },
-        description: 'Returns an XKCD. Call with no args for random, `new` for latest, or a number for a specific one.',
+        description: 'Returns an XKCD. No args for random, `new` for latest, a number for a specific one.',
         async: true
     });
 
