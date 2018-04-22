@@ -6164,7 +6164,7 @@ module.exports = function (bot) {
             del: 'NONE',
             use: 'OWNER'
         },
-        description: 'Chant zippidi lepat and from the room I shall depart. `/unsummon [roomid=your_roomid]`',
+        description: 'Chant zippidi lepat and from the room I shall depart. Same as summon.',
         pendingMessage: 'I will leave this room after {0} more invocation(s)'
     }));
 
@@ -6315,7 +6315,7 @@ module.exports = function (bot) {
             del: 'NONE',
             use: 'OWNER'
         },
-        description: 'Undo (delete) specified or last message. `/undo [msgid0, msgid1, ...]` (omit for last message); `/undo xN` for last N; `/undo ~N` for the Nth message from the end'
+        description: 'Undo (delete) specified or last message.'
     });
 
 };
@@ -7173,7 +7173,7 @@ module.exports = function (bot) {
         permissions: {
             del: 'NONE'
         },
-        description: 'Returns an XKCD. No args for random, `new` for latest, a number for a specific one.',
+        description: 'Returns an XKCD: No args for random, new = for latest, number = specific one.',
         async: true
     });
 
