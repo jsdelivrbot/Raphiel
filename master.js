@@ -477,7 +477,7 @@ IO.jsonp = function (opts) {
 // generic, pre-made call to be used inside commands
 IO.jsonp.google = function (query, cb) {
     IO.jsonp({
-        url: 'http://ajax.googleapis.com/ajax/services/search/web',
+        url: 'https://ajax.googleapis.com/ajax/services/search/web',
         jsonpName: 'callback',
         data: {
             v: '1.0',
@@ -683,11 +683,11 @@ logged in, and you have to provide it in all your requests.
 
   Connecting to the input websocket is done in two steps, of which the first
 is obtaining the link to the second. We make a request containing our room id
-to /ws-auth (e.g. http://chat.stackoverflow.com/ws-auth), and we receive a JSON
+to /ws-auth (e.g. https://chat.stackoverflow.com/ws-auth), and we receive a JSON
 object containing a url property (or something else if there was an error):
 
 Request:
-  POST http://chat.stackoverflow.com/ws-auth
+  POST https://chat.stackoverflow.com/ws-auth
   Content-Length: 47
   Content-Type: application/x-www-form-urlencoded
   Content: roomid=17&fkey=01234567890123456789012345678901
@@ -765,7 +765,7 @@ and the magical fkey. In the following example, we send a new message to room 1
 containing just the word "butts":
 
 Request:
-  POST http://chat.stackoverflow.com/chats/1/messages/new
+  POST https://chat.stackoverflow.com/chats/1/messages/new
   text=butts&fkey=01234567890123456789012345678901
 Response:
   {"id":11832651,"time":1379406464}
@@ -4232,7 +4232,7 @@ module.exports = function (bot) {
         'It means I aint got time to learn your $5 words.',
         'My pocket dictionary just isn\'t good enough for you.'
     ];
-    var wikiUrl = 'http://en.wiktionary.org';
+    var wikiUrl = 'https://en.wiktionary.org';
 
     // I wish regexps had the x flag...
     /*
@@ -4420,7 +4420,7 @@ module.exports = function (bot) {
             var self = this;
 
             bot.IO.jsonp({
-                url: 'http://en.wiktionary.org/w/api.php',
+                url: 'https://en.wiktionary.org/w/api.php',
                 jsonpName: 'callback',
                 data: {
                     action: 'query',
@@ -4605,7 +4605,7 @@ module.exports = function (bot) {
             }
             function formatLink (query) {
                 var link =
-                    'http://google.com/search?q=' + encodeURIComponent(query);
+                    'https://google.com/search?q=' + encodeURIComponent(query);
 
                 return bot.adapter.link('*', link);
             }
@@ -4889,7 +4889,7 @@ module.exports = function (bot) {
 },{}],28:[function(require,module,exports){
 module.exports = function (bot) {
 /*global jQuery*/
-    var baseURL = 'http://api.jquery.com/';
+    var baseURL = 'https://api.jquery.com/';
 
     function jquery (args) {
         if (!args.content) {
@@ -5279,7 +5279,7 @@ module.exports = function (bot) {
 module.exports = function (bot) {
 // #151: Listen for meme image names and reply with that meme.
 
-    var urlBase = 'http://cdn.alltheragefaces.com/img/faces/png/',
+    var urlBase = 'https://cdn.alltheragefaces.com/img/faces/png/',
         extension = 'png';
 
     var memes = {
@@ -5432,7 +5432,7 @@ module.exports = function (bot) {
         function finish (src) {
             bot.log(src, '/mustache finish');
 
-            args.directreply('http://mustachify.me/' + props.mustache + '?src=' + src);
+            args.directreply('https://mustachify.me/' + props.mustache + '?src=' + src);
         }
 
         function parseArgs (args) {
@@ -5722,7 +5722,7 @@ module.exports = function (bot) {
         }
         function mapLink (obj) {
             var name = args.escape(obj.name);
-            return '[' + name + '](http://es5.github.com/#' + obj.section + ')';
+            return '[' + name + '](https://es5.github.com/#' + obj.section + ')';
         }
     }
 
@@ -5753,7 +5753,7 @@ module.exports = function (bot) {
     "reputation_change_day": 0,
     "reputation": 11847,
     "user_id": 617762,
-    "link": "http://stackoverflow.com/users/617762/zirak",
+    "link": "https://stackoverflow.com/users/617762/zirak",
     "display_name": "Zirak"
   }
 */
@@ -5907,7 +5907,7 @@ module.exports = function (bot) {
             return 'TO͇̹̺ͅƝ̴ȳ̳ TH̘Ë͖́̉ ͠P̯͍̭O̚​N̐Y̡';
         }
         else if (!answers && !questions) {
-            return 'http://i.imgur.com/F79hP.png';
+            return 'https://i.imgur.com/F79hP.png';
         }
 
         return Math.ratio(questions, answers);
@@ -6415,8 +6415,8 @@ module.exports = function (bot) {
 
         if (lineCount >= 10) {
             lecture += ' For posting large code blocks, use a paste site ' +
-                'like https://gist.github.com, http://hastebin.com, ' +
-                'http://pastie.org or a demo site like https://jsbin.com/';
+                'like https://gist.github.com, https://hastebin.com, ' +
+                'https://pastie.org or a demo site like https://jsbin.com/';
         }
 
         return lecture;
@@ -6637,7 +6637,7 @@ module.exports = function (bot) {
         }
         function formatTag ($0, $1) {
             var href =
-            'http://urbandictionary.com/define.php?term=' +
+            'https://urbandictionary.com/define.php?term=' +
             encodeURIComponent($1);
 
             return args.link($0, href);
@@ -6825,7 +6825,7 @@ module.exports = function (bot) {
             }
 
             bot.IO.jsonp({
-                url: 'http://api.openweathermap.org/data/2.5/weather',
+                url: 'https://api.openweathermap.org/data/2.5/weather',
                 jsonpName: 'callback',
                 data: {
                     lat: lat,
@@ -6842,7 +6842,7 @@ module.exports = function (bot) {
 
         city: function (city, cb) {
             bot.IO.jsonp({
-                url: 'http://api.openweathermap.org/data/2.5/weather',
+                url: 'https://api.openweathermap.org/data/2.5/weather',
                 jsonpName: 'callback',
                 data: {
                     q: city,
@@ -6884,7 +6884,7 @@ module.exports = function (bot) {
 
             ret =
                 bot.adapter.link(
-                    data.name, 'http://openweathermap.org/city/' + data.id
+                    data.name, 'https://openweathermap.org/city/' + data.id
                 ) + ': ';
 
             // to help our dear American friends, also include fahrenheit
@@ -7035,7 +7035,7 @@ module.exports = function (bot) {
 
     function command (args, cb) {
         bot.IO.jsonp({
-            url: 'http://en.wikipedia.org/w/api.php',
+            url: 'https://en.wikipedia.org/w/api.php',
             jsonpName: 'callback',
             data: {
                 action: 'opensearch',
@@ -7094,7 +7094,7 @@ module.exports = function (bot) {
     // *sniffle*
     function getXKCD(args, cb) {
         var prop = (args.parse()[0] || '').toLowerCase(),
-            linkBase = 'http://xkcd.com/';
+            linkBase = 'https://xkcd.com/';
 
         // they want a specifix xkcd
         if (/^\d+$/.test(prop)) {
@@ -7114,7 +7114,7 @@ module.exports = function (bot) {
         bot.log('/xkcd random/latest', prop);
         // they want a random XKCD, or the latest
         bot.IO.jsonp({
-            url: 'http://dynamic.xkcd.com/api-0/jsonp/comic',
+            url: 'https://dynamic.xkcd.com/api-0/jsonp/comic',
             jsonpName: 'callback',
             fun: finishXKCD
         });
@@ -7347,7 +7347,7 @@ $('#dialog').dialog();
 ̱͕̯̝̺̜W̢̘̹i͞t̬͔̬h̹̞̗̞ ͓͍̬́o̮͇͎̬u̲t̲͉̞̹̖̯̘ ̮̠͇o̘̪͙͜r̷̞̱͔d͍͢e҉̠͚r̫͙ͅ.̴̣
 Th͎̯̠͚̥e̜̞͇͔̣ ̼̰͚̱̜̬͡ͅN̢̳̞͔e̴̩̠̖͎̤̬z̧̺̘͎̮̣ṕ͍̳̼̥͍e̝̟̻̳͕̱͍r̢̞̝̲̻d̶̫͉̮̙̯͔i̵̼͎̰̘̙̰*/
                         },
-                            description : 'http://stackoverflow.com/a/1732454/1216976'
+                            description : 'https://stackoverflow.com/a/1732454/1216976'
                         }
                     )
         ;
