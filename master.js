@@ -4,6 +4,8 @@
 // some sort of pseudo constructor
 exports.Command = function (cmd) {
     var bot = this;
+    bot.memory.data.Admins = bot.memory.data.Admins || []
+    bot.memory.data.Owners = bot.memory.data.Owners || []
     cmd.name = cmd.name.toLowerCase();
     cmd.thisArg = cmd.thisArg || cmd;
 
@@ -2123,7 +2125,7 @@ module.exports = function (bot) {
             fun: fun,
             permissions: {
                 del: 'NONE',
-                use: adminCommands[cmdName] ? 'OWNER' : 'ALL'
+                use: adminCommands[cmdName] ? bot.memory.data.Admins : 'ALL'
             },
             description: descriptions[cmdName],
             pendingMessage: fun.pendingMessage,
@@ -4893,6 +4895,7 @@ module.exports = function (bot) {
 
     function jquery (args) {
         if (!args.content) {
+        console.log(args.content)
             return baseURL;
         }
 
