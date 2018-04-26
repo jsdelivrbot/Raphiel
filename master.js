@@ -2125,7 +2125,7 @@ module.exports = function (bot) {
             fun: fun,
             permissions: {
                 del: 'NONE',
-                use: adminCommands[cmdName] ? bot.memory.data.Admins : 'ALL'
+                use: adminCommands[cmdName] ? "OWNER" : 'ALL'
             },
             description: descriptions[cmdName],
             pendingMessage: fun.pendingMessage,
