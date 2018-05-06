@@ -2110,7 +2110,7 @@ module.exports = function (bot) {
     var ownerCommands = {
         die: true, ban: true, listcommands: true,
         xkcd: true, mdn: true, stat: true, stats: true,
-        doge: true, zalgo: true, zalgo: true,
+        doge: true, zalgo: true,
         tell: true, info: true, quote: true,
         
     };
