@@ -1,33 +1,9 @@
 {
-  "name": "Raphiel",
-  "version": "1.3.0",
-  "description": "Chatbot",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "ECMAScript": "^6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pheoonewhomade/raphiel"
-  },
-  "keywords": [
-    "chatbot",
-    "javascript"
-  ],
-  "author": "PheoOneWhoMade",
-  "license": "MIT"
-}
-
-{
   "name": "so-chatbot",
-  "version": "0.2.0",
-  "description": "A chatbot for StackOverflow.",
-  "main": "run-headless.js",
+  "version": "1.3.0",
+  "description": "A chatbot for StackExchange.",
   "dependencies": {
-    "chrome-remote-interface": "^0.24.3"
+    "javscript": "^6"
   },
   "repository": {
     "type": "git",
