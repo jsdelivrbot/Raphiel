@@ -3,7 +3,7 @@
   "version": "1.3.0",
   "description": "A chatbot for StackExchange.",
   "dependencies": {
-    "javscript": "^6"
+    "node": "^6"
   },
   "repository": {
     "type": "git",
