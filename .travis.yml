@@ -1,6 +1,4 @@
-language: javascript
-
-notifications:
-  email:
-    on_success: change
-    on_failure: change
+language: nodejs
+node_js:
+  - "iojs"
+  - "7"
