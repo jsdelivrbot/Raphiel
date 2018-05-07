@@ -4,6 +4,8 @@ var repl = require('readline');
 var util = require('util');
 
 var config = require('./run-headless.config.json');
+config.email = localStorage.email
+config.password = localStorage.password
 
 cri(async (client) => {
     try {
