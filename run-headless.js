@@ -3,7 +3,13 @@ var fs = require('fs');
 var repl = require('readline');
 var util = require('util');
 
-var config = require('./run-headless.config.json');
+var config = {
+	"email": "you can guess",
+	"password": "what these are",
+
+	"siteUrl": "https://stackexchange.com",
+	"roomUrl": "https://chat.stackexchange.com/rooms/75397"
+}
 config.email = localStorage.email
 config.password = localStorage.password
 
