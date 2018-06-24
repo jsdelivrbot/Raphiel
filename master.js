@@ -1935,7 +1935,7 @@
                 , welcomeMessage: welcomeFmt.supplant(rulesLink)
                 , // this is some test key taken from the OpenWeatherMap site
                 // it'll work, probably. but replace it with your own, m'kay?
-                weatherKey: '44db6a862fba0b067b1930da0d769e98'
+                weatherKey: '563b5ccfd1308e906226f1f5c53bee04'
             }, bot.memory.get('config', {}));
             bot.memory.set('config', config);
             bot.memory.save('config');
