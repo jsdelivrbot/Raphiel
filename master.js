@@ -5922,6 +5922,7 @@
                 }
                 , finishCb: function (cb) {
                     var self = this;
+                    console.log(resp)
                     return function (resp) {
                         cb(self.format(resp));
                     };
