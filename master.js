@@ -5923,7 +5923,7 @@
                 , finishCb: function (cb) {
                     var self = this;
                     return function (resp) {
-                        cb(self.format(JSON.stringify(resp)));
+                        cb(JSON.stringify(resp));
                     };
                 }
                 , errorCb: function (cb) {
