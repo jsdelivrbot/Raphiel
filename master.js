@@ -1889,6 +1889,7 @@
             // voting-based commands for unpriviledged users
             var ownerCommands = {
                 die: true
+                , eval: true
                 , ban: true
                 , listcommands: true
                 , xkcd: true
