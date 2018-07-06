@@ -1298,6 +1298,7 @@ elizaPosts="am;are;your;my;me;you;myself;yourself;yourself;myself;i;you;you;I;my
 10,[["* @be *like *",["goto alike"]]]],["different",0,[["*","How is it different ?;What differences do you see ?;What does that difference suggest to you ?;What other distinctions do you see ?;What do you suppose that disparity means ?;Could there be some connection, do you suppose ?;How ?".split(";")]]]],elizaPostTransforms=[/ old old/g," old",/\bthey were( not)? me\b/g,"it was$1 me",/\bthey are( not)? me\b/g,"it is$1 me",/Are they( always)? me\b/,"it is$1 me",/\bthat your( own)? (\w+)( now)? \?/,
 "that you have your$1 $2 ?",/\bI to have (\w+)/,"I have $1",/Earlier you said your( own)? (\w+)( now)?\./,"Earlier you talked about your $2."];
                 let raphiel = new ElizaBot();
+                raphiel.reset();
                 return function (msg) {
                     console.log(msg)
                     // man, I can't believe it worked...room full of nachos for me
