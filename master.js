@@ -1257,7 +1257,7 @@
                 if (coolnessFlag) {
                     return;
                 }
-                msg.reply(this.giveUpMessage(cmd.guesses));
+                msg.reply(this.giveUpMessage(msg));
             }
             , giveUpMessage: (function() {
                   function ElizaBot(a){this.noRandom=a?!0:!1;this.capitalizeFirstLetter=!0;this.debug=!1;this.memSize=20;this.version="1.1 (original)";this._dataParsed||this._init();this.reset()}ElizaBot.prototype.reset=function(){this.quit=!1;this.mem=[];this.lastchoice=[];for(var a=0;a<elizaKeywords.length;a++){this.lastchoice[a]=[];for(var b=elizaKeywords[a][2],c=0;c<b.length;c++)this.lastchoice[a][c]=-1}};ElizaBot.prototype._dataParsed=!1;
