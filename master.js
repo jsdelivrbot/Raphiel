@@ -1299,7 +1299,7 @@ elizaPosts="am;are;your;my;me;you;myself;yourself;yourself;myself;i;you;you;I;my
 "that you have your$1 $2 ?",/\bI to have (\w+)/,"I have $1",/Earlier you said your( own)? (\w+)( now)?\./,"Earlier you talked about your $2."];
                 let raphiel = new ElizaBot();
                 return function (msg) {
-                    
+                    console.log(msg)
                     // man, I can't believe it worked...room full of nachos for me
                     var errMsg = raphiel.transform(msg);
                     return errMsg;
@@ -1382,8 +1382,8 @@ elizaPosts="am;are;your;my;me;you;myself;yourself;yourself;myself;i;you;you;I;my
                     message += ' Did you mean: ' + guesses.join(', ');
                 }
                 return {
-                    error: message
-                    , guesses: msg 
+                    error: 'Command ' + cmdName + ' does not exist.'
+                    , guesses: msg
                 };
             }
             , listen: function (regex, fun, thisArg) {
